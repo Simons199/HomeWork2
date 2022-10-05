@@ -1,29 +1,11 @@
-﻿int num = ReadInt("Введите число: ");
-int count = num.ToString().Length;
-Console.Write(MakeArray(num, count));
+﻿// Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
 
-int ReadInt(string message)
-{
-    Console.Write(message);
-    return Convert.ToInt32(Console.ReadLine());
+Console.Write("Введи число: ");
+int anyNum = Convert.ToInt32(Console.ReadLine());
+string anyNumText = Convert.ToString(anyNum);
+if (anyNumText.Length > 2){
+  Console.WriteLine("третья цифра -" + anyNumText[2]);
 }
-
-int MakeArray(int x, int y)
-{
-int result = 0;
-    if (y < 3)
-    {
-        Console.Write("Третьей цифры нет:");
-    }
-    else
-    {
-        int z = 1;
-        for (int i = y; i > 3; i--)
-        {
-            z = z * 10;
-        }
-
-        result = (x / z) % 10;
-    }
-return result;
+else {
+  Console.WriteLine("третьей цифры нет");
 }
